@@ -13,8 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: v1
-name: nem
-description: A Helm chart for NEM
-version: 0.1.0
+# Aggregation chart of NEM charts
 
+kafka:
+  replicas: 1
+  persistence:
+    enabled: false
+  zookeeper:
+    servers: 1
+    persistence:
+      enabled: false

@@ -19,15 +19,7 @@ dependencies:
   version: 2.0.0
   repository: https://charts.opencord.org/master/
 
-- name: rcord-lite
-  version: 0.1.0
-  repository: https://charts.opencord.org/master/
-
-- name: hippie-oss
-  version: 1.0.0
-  repository: https://charts.opencord.org/master/
-
 - name: kafka
-  alias: cord-kafka
+  alias: kafka
   version: 0.4.7
   repository: https://kubernetes-charts-incubator.storage.googleapis.com/
