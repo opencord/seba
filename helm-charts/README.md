@@ -8,6 +8,7 @@ To install SEBA:
 ```
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 helm repo add cord https://charts.opencord.org/master
+helm repo add cord6 https://charts.opencord.org/cord-6.0
 helm dep update nem-core
 helm dep update profile/bng-in-fabric
 helm dep update seba-substrate
