@@ -28,7 +28,7 @@ voltha-kafka:
 voltha:
   etcd-operator:
     customResources:
-      createEtcdClusterCRD: false
+      createEtcdClusterCRD: true
   kafkaReleaseName: "seba-substrate-voltha-kafka"
 
 # from configs/onos-voltha.yaml
