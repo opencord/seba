@@ -36,9 +36,6 @@ onos-voltha:
   nameOverride: "onosv"
   fullnameOverride: "onos-voltha"
 
-  namespace: voltha
-  serviceAccountName: voltha-serviceaccount
-
   onosImage: 'voltha/voltha-onos:latest'
 
   services:
@@ -66,6 +63,9 @@ onos-voltha:
 
 # from configs/onos-fabric.yaml
 onos-fabric:
+  nameOverride: "onosf"
+  fullnameOverride: "onos-fabric"
+
   services:
     openflowServiceType: NodePort
     ovsdbServiceType: NodePort
@@ -83,4 +83,3 @@ onos-fabric:
   onos_env:
     - name: ONOS_APPS
       value: "openflow"
-

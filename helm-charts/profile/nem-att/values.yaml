@@ -31,8 +31,8 @@ xos_api_testerImage: 'xosproject/xos-api-tester:2.0.1'
 xosAdminUser: "admin@opencord.org"
 xosAdminPassword: "letmein"
 
-onosFabricRestService: "seba-substrate-onos-fabric-ui.default.svc.cluster.local"
-onosVolthaRestService: "onos-voltha-ui.voltha.svc.cluster.local"
+onosFabricRestService: "onos-fabric-ui.default.svc.cluster.local"
+onosVolthaRestService: "onos-voltha-ui.default.svc.cluster.local"
 kafkaService: "nem-core-kafka.default.svc.cluster.local:9092"
 
 volt:

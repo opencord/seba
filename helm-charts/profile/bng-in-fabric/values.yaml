@@ -37,4 +37,4 @@ volt:
   kafkaService: "nem-core-kafka.default.svc.cluster.local"
 onos-service:
   kafkaService: "nem-core-kafka.default.svc.cluster.local:9092"
-  onosFabricRestService: "seba-substrate-onos-fabric-ui.default.svc.cluster.local"
+  onosFabricRestService: "onos-fabric-ui.default.svc.cluster.local"
