@@ -36,8 +36,6 @@ onos-voltha:
   nameOverride: "onosv"
   fullnameOverride: "onos-voltha"
 
-  onosImage: 'voltha/voltha-onos:latest'
-
   services:
     openflowServiceType: ClusterIP
     ovsdbServiceType: ClusterIP
