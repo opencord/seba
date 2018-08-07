@@ -322,6 +322,26 @@ topology_template:
           rest_hostname: {{ .Values.onosVolthaRestService | quote }}
           rest_port: 8181
 
+    onos_app#openflow-base:
+      type: tosca.nodes.ONOSApp
+      properties:
+        name: openflow-base
+        app_id: org.onosproject.openflow-base
+      requirements:
+        - owner:
+            node: service#ONOS_VOLTHA
+            relationship: tosca.relationships.BelongsToOne
+
+    onos_app#hostprovider:
+      type: tosca.nodes.ONOSApp
+      properties:
+        name: hostprovider
+        app_id: org.onosproject.hostprovider
+      requirements:
+        - owner:
+            node: service#ONOS_VOLTHA
+            relationship: tosca.relationships.BelongsToOne
+
     onos_app#cord-config:
       type: tosca.nodes.ONOSApp
       properties:
@@ -341,6 +361,7 @@ topology_template:
         app_id: org.opencord.olt
         url: {{ .Values.oltAppUrl }}
         version: 2.0.0.SNAPSHOT
+        dependencies: org.opencord.config
       requirements:
         - owner:
             node: service#ONOS_VOLTHA
@@ -365,6 +386,7 @@ topology_template:
         app_id: org.opencord.dhcpl2relay
         url: {{ .Values.dhcpl2relayAppUrl }}
         version: 1.5.0.SNAPSHOT
+        dependencies: org.opencord.sadis
       requirements:
         - owner:
             node: service#ONOS_VOLTHA
@@ -377,6 +399,7 @@ topology_template:
         app_id: org.opencord.aaa
         url: {{ .Values.aaaAppUrl }}
         version: 1.8.0.SNAPSHOT
+        dependencies: org.opencord.sadis
       requirements:
         - owner:
             node: service#ONOS_VOLTHA
@@ -389,6 +412,7 @@ topology_template:
         app_id: org.opencord.kafka
         url: {{ .Values.kafkaAppUrl }}
         version: 1.0.0.SNAPSHOT
+        dependencies: org.opencord.olt,org.opencord.aaa,org.opencord.dhcpl2relay
       requirements:
         - owner:
             node: service#ONOS_VOLTHA
