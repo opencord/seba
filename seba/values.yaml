@@ -12,24 +12,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-dependencies:
-
-- name: voltha
-  version: 1.0.0
-  repository: https://charts.opencord.org/master/
-
-- name: onos
-  alias: onos-voltha
-  version: 0.1.0
-  repository: https://charts.opencord.org/master/
-
-- name: onos
-  alias: onos-fabric
-  version: 0.1.0
-  repository: https://charts.opencord.org/master/
-
-- name: kafka
-  alias: voltha-kafka
-  version: 0.4.7
-  repository: https://kubernetes-charts-incubator.storage.googleapis.com/

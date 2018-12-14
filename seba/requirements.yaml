@@ -1,5 +1,5 @@
 ---
-# Copyright 2018-present Open Networking Foundation
+# Copyright 2017-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,12 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: grafana-dashboard-kb8s
-  labels:
-     grafana_dashboard: "1"
-data:
-  kb8s.json: |
-{{ .Files.Get "grafana-dashboards/kb8s-app-metrics.json" | indent 4 }}
+dependencies:
+- name: stable/etcd-operator
+  version: 0.8.0
+  repository: https://kubernetes-charts.storage.googleapis.com
+  condition: etcd-operator.enabled
+- name: voltha
+  version: 1.0.2
+  repository: https://charts.opencord.org
+- name: seba-services
+  version: 1.0.1
+  repository: https://charts.opencord.org
+- name: base-kubernetes
+  version: 1.0.1
+  repository: https://charts.opencord.org
