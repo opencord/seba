@@ -22,8 +22,8 @@ dependencies:
   version: 1.0.2
   repository: https://charts.opencord.org
 - name: seba-services
-  version: 1.0.1
+  version: 1.0.2
   repository: https://charts.opencord.org
 - name: base-kubernetes
-  version: 1.0.1
+  version: 1.0.2
   repository: https://charts.opencord.org

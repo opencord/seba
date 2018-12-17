@@ -12,3 +12,29 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+seba-services:
+  onosRestService: cord-platform-onos-ui.default.svc.cluster.local
+  kafkaService: cord-platform-kafka.default.svc.cluster.local:9092
+
+  onos-service:
+    kafkaService: cord-platform-kafka
+    onosRestService: "cord-platform-onos-cord-ui.default.svc.cluster.local"
+  fabric:
+    kafkaService: cord-platform-kafka
+  volt:
+    kafkaService: cord-platform-kafka
+    volthaRestService: voltha.voltha.svc.cluster.local
+    onosRestService: cord-platform-onos-ui.default.svc.cluster.local
+  fabric-crossconnect:
+    kafkaService: cord-platform-kafka
+  sadis-server:
+    kafkaBroker: cord-platform-kafka:9092
+
+voltha:
+  kafkaReleaseName: cord-platform-kafka
+  ofagent_args:
+  - "/ofagent/ofagent/main.py"
+  - "--consul=consul.$(NAMESPACE).svc.cluster.local:8500"
+  - "--controller=cord-platform-onos-openflow.default.svc.cluster.local:6653"
+  - "--grpc-endpoint=vcore.$(NAMESPACE).svc.cluster.local:50556"
