@@ -15,7 +15,7 @@
 
 dependencies:
 - name: voltha
-  version: 1.0.2
+  version: 1.0.3
   repository: https://charts.opencord.org
 - name: seba-services
   version: 1.0.2
