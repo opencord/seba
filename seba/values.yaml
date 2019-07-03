@@ -20,21 +20,29 @@ seba-services:
   onos-service:
     kafkaService: cord-platform-kafka
     onosRestService: "cord-platform-onos-cord-ui.default.svc.cluster.local"
+
   fabric:
     kafkaService: cord-platform-kafka
+
   volt:
     kafkaService: cord-platform-kafka
     volthaRestService: voltha.voltha.svc.cluster.local
     onosRestService: cord-platform-onos-ui.default.svc.cluster.local
+
   fabric-crossconnect:
     kafkaService: cord-platform-kafka
+
   sadis-server:
     kafkaBroker: cord-platform-kafka:9092
 
 voltha:
   kafkaReleaseName: cord-platform-kafka
+
   ofagent_args:
   - "/ofagent/ofagent/main.py"
   - "--consul=consul.$(NAMESPACE).svc.cluster.local:8500"
   - "--controller=cord-platform-onos-openflow.default.svc.cluster.local:6653"
   - "--grpc-endpoint=vcore.$(NAMESPACE).svc.cluster.local:50556"
+
+  etcd-cluster:
+    clusterSize: 1

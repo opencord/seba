@@ -15,11 +15,11 @@
 
 dependencies:
 - name: voltha
-  version: 1.0.3
+  version: 1.0.6
   repository: https://charts.opencord.org
 - name: seba-services
-  version: 1.0.2
+  version: 1.2.7
   repository: https://charts.opencord.org
 - name: base-kubernetes
-  version: 1.0.2
+  version: 1.2.1
   repository: https://charts.opencord.org
